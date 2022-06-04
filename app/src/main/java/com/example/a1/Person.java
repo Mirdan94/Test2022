@@ -1,6 +1,6 @@
 package com.example.a1;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private String name;
     private int age;
@@ -24,5 +24,16 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(Person p) {
+        if (this.age < p.getAge()) {
+            return 1;
+        } else if (this.age > p.getAge()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
